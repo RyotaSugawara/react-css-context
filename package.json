@@ -1,0 +1,12 @@
+{
+  "name": "react-css-context",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "ryo_suga <ryo.suga.dev@gmail.com> (http://banseivlog.hatenablog.jp/)",
+  "license": "MIT"
+}
