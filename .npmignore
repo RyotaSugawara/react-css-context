@@ -1,6 +1,7 @@
 .circleci
 docs
 test
+src
 node_modules
 tsconfig.json
 tslint.json
