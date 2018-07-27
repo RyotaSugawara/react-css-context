@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "ES2017",
+    "jsx": "react",
+    "outDir": "lib",
+    "rootDir": "src",
+    "experimentalDecorators": true,
+    "lib": [
+      "dom",
+      "es2015",
+      "es5",
+      "es6"
+    ]
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}
