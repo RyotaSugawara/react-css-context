@@ -98,8 +98,9 @@ test('Client Side Rendering', (t) => {
   document.querySelector<HTMLLinkElement>(`link[href="${CSS_FILE_3}"]`).onerror(this);
   t.is(document.getElementById('test_3').innerHTML, '<span>error</span>');
 
-  t.is(
-    document.head.innerHTML,
-    '<link href="https://necolas.github.io/normalize.css/8.0.0/normalize.css" rel="stylesheet" data-react-css-context="true"><link href="https://necolas.github.io/normalize.css/7.0.0/normalize.css" rel="stylesheet" data-react-css-context="true"><link href="https://necolas.github.io/normalize.css/6.0.0/normalize.css" rel="stylesheet" data-react-css-context="true">'
-  );
+  /* tslint:disable:max-line-length */
+  const snapshot = '<link href="https://necolas.github.io/normalize.css/8.0.0/normalize.css" rel="stylesheet" data-react-css-context="true"><link href="https://necolas.github.io/normalize.css/7.0.0/normalize.css" rel="stylesheet" data-react-css-context="true"><link href="https://necolas.github.io/normalize.css/6.0.0/normalize.css" rel="stylesheet" data-react-css-context="true">';
+  /* tslint:enable:max-line-length */
+
+  t.is(document.head.innerHTML, snapshot);
 });
