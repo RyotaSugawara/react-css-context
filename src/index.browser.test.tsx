@@ -97,4 +97,9 @@ test('Client Side Rendering', (t) => {
   // Simulate onerror at test_3
   document.querySelector<HTMLLinkElement>(`link[href="${CSS_FILE_3}"]`).onerror(this);
   t.is(document.getElementById('test_3').innerHTML, '<span>error</span>');
+
+  t.is(
+    document.head.innerHTML,
+    '<link href="https://necolas.github.io/normalize.css/8.0.0/normalize.css" rel="stylesheet" data-react-css-context="true"><link href="https://necolas.github.io/normalize.css/7.0.0/normalize.css" rel="stylesheet" data-react-css-context="true"><link href="https://necolas.github.io/normalize.css/6.0.0/normalize.css" rel="stylesheet" data-react-css-context="true">'
+  );
 });

@@ -43,11 +43,13 @@ export class CSSProvider extends React.Component<CSSProviderProps, CSSContext> {
       // Append the link element with css.
       // When css file’s have been loaded, CSSCollector state will change to Success.
       // or if error, CSSCollector state will be Error.
-      appendCSS(href, () => {
-        this.updateCSSMap(href, CSSFetchState.Success);
-      }, () => {
-        this.updateCSSMap(href, CSSFetchState.Error);
-      });
+      if (this.state.cssMap.get(href) !== CSSFetchState.Success) {
+        appendCSS(href, () => {
+          this.updateCSSMap(href, CSSFetchState.Success);
+        }, () => {
+          this.updateCSSMap(href, CSSFetchState.Error);
+        });
+      }
     }
   }
 
