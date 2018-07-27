@@ -19,12 +19,16 @@ import { CSSCollector } from 'react-css-context';
 
 export class SomeComponent extends React.Component {
   return (
-    <CSSCollector hrefs={["/path/to/css"]}>
+    <CSSCollector hrefs={["absolute/url/of/css"]}>
       <div>display after css loaded.</div>
     </CSSCollector>
   );
 }
 ```
+
+**`href` must be absolute url**
+- NG: `/path/to/some.css`
+- OK: `https://ryotasugawara.github.io/absolute/url.css`
 
 ### Server Side Rendering
 
@@ -63,7 +67,7 @@ const htmlOutput = renderToString(
 );
 ```
 
-### 3. Client Side Rendering
+### Client Side Rendering
 
 ```tsx
 import * as React from 'react';

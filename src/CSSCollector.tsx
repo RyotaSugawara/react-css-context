@@ -7,7 +7,7 @@ import {
 import { isServer } from './utils/isServer';
 
 interface CSSCollectorProps {
-  hrefs: string[];
+  hrefs: string[]; // href must be absolute url in here.
 }
 
 export function createCSSCollector(
