@@ -39,11 +39,11 @@ import { CSSProvider, toTagString, toTagComponent } from 'react-css-context';
 
 const cssMap = new Map();
 const renderOutput = ReactDOMServer.renderToString(
-  <App>
-    <CSSProvider cssMap={cssMap}>
+  <CSSProvider cssMap={cssMap}>
+    <App>
       <SomeComponent />
-    </CSSProvider>
-  </App>
+    </App>
+  </CSSProvider>
 );
 
 // use string
@@ -78,11 +78,11 @@ import { CSSProvider, getCSSMap } from 'react-css-context';
 const cssMap = getCSSMap();
 
 ReactDOM.render(
-  <App>
-    <CSSProvider cssMap={cssMap}>
+  <CSSProvider cssMap={cssMap}>
+    <App>
       <SomeComponent />
-    </CSSProvider>
-  </App>,
+    </App>
+  </CSSProvider>,
   document.getElementById('main')
 );
 ```

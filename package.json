@@ -7,8 +7,8 @@
   "scripts": {
     "build": "tsc --declaration",
     "lint": "tslint -p tsconfig.json",
-    "test-node": "ava ./lib/**/*.node.test.js",
-    "test-browser": "BROWSER_ENV=true ava ./lib/**/*.browser.test.js",
+    "test-node": "ava ./lib/**/*.node.test.js -v",
+    "test-browser": "BROWSER_ENV=true ava ./lib/**/*.browser.test.js -v",
     "test": "npm run build && npm run lint && npm run test-node && npm run test-browser"
   },
   "keywords": [
