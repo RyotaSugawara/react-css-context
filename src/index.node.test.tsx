@@ -31,16 +31,16 @@ test('Server Side Rendering', async (t) => {
   const cssMap = new Map();
 
   const readableStream = renderToStaticNodeStream(
-    <App>
-      <CSSProvider cssMap={cssMap}>
+    <CSSProvider cssMap={cssMap}>
+      <App>
         <CSSCollector hrefs={[CSS_FILE_1, CSS_FILE_2]}>
           ok
         </CSSCollector>
         <CSSCollector hrefs={[CSS_FILE_3]}>
           <p>good</p>
         </CSSCollector>
-      </CSSProvider>
-    </App>,
+      </App>
+    </CSSProvider>,
   );
 
   const result = readableStream.read().toString();
@@ -56,4 +56,27 @@ test('Server Side Rendering', async (t) => {
   const cssTagComponentString = renderToStaticMarkup(cssTagComponent);
 
   t.is(cssTagString, cssTagComponentString);
+});
+
+test('CSSProvider can only receive single element.', (t) => {
+
+  try {
+    const cssMap = new Map();
+    renderToStaticMarkup(
+      <CSSProvider cssMap={cssMap}>
+        <App>
+          <CSSCollector hrefs={[CSS_FILE_1, CSS_FILE_2]}>
+            ok
+          </CSSCollector>
+          <CSSCollector hrefs={[CSS_FILE_3]}>
+            <p>good</p>
+          </CSSCollector>
+        </App>
+        <App />
+      </CSSProvider>,
+    );
+    t.fail();
+  } catch (e) {
+    t.pass();
+  }
 });

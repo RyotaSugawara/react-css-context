@@ -64,8 +64,8 @@ test('Client Side Rendering', (t) => {
 
   document.body.innerHTML = '<div id="main"></div>';
   render(
-    <App>
-      <CSSProvider cssMap={cssMap}>
+    <CSSProvider cssMap={cssMap}>
+      <App>
         <div id="test_1">
           <CSSCollector hrefs={[CSS_FILE_1]}>
             ok
@@ -81,8 +81,8 @@ test('Client Side Rendering', (t) => {
             ok
           </CSSCollector2>
         </div>
-      </CSSProvider>
-    </App>,
+      </App>
+    </CSSProvider>,
     document.getElementById('main'),
   );
 

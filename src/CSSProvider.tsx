@@ -80,7 +80,7 @@ export class CSSProvider extends React.Component<CSSProviderProps, CSSContext> {
   public render() {
     return (
       <Provider value={this.state}>
-        {this.props.children}
+        {React.Children.only(this.props.children)}
       </Provider>
     );
   }
