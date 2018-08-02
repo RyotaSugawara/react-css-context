@@ -1,5 +1,6 @@
 export {
   CSSCollector,
+  createCSSCollector,
 } from './CSSCollector';
 export {
   CSSFetchState,
