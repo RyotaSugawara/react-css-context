@@ -10,8 +10,8 @@ import {
   CSSProvider,
   toTagComponent,
   toTagString,
-} from './index';
-import { isServer } from './utils/isServer';
+} from '../index';
+import { isServer } from '../utils/isServer';
 
 const App: React.SFC = ({ children }) => {
   return (

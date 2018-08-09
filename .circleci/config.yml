@@ -21,9 +21,7 @@ jobs:
       - run:
           name: test
           command: |
-            npm run lint
-            npm run test-node
-            npm run test-browser
+            npm test
 workflows:
   version: 2
   build:

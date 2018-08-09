@@ -8,7 +8,7 @@
     "moduleResolution": "node",
     "target": "es5",
     "jsx": "react",
-    "outDir": "lib",
+    "outDir": "dist",
     "rootDir": "src",
     "experimentalDecorators": true,
     "lib": [

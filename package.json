@@ -2,14 +2,15 @@
   "name": "react-css-context",
   "version": "0.1.2",
   "description": "Async Loading CSS file in our React Application.",
-  "main": "./lib/index.js",
+  "main": "./lib/react-css-context.js",
   "types": "./lib/index.d.ts",
   "scripts": {
-    "build": "tsc --declaration",
+    "build": "rollup -c",
     "lint": "tslint -p tsconfig.json",
-    "test-node": "ava ./lib/**/*.node.test.js -v",
-    "test-browser": "BROWSER_ENV=true ava ./lib/**/*.browser.test.js -v",
-    "test": "npm run build && npm run lint && npm run test-node && npm run test-browser"
+    "test-build": "tsc",
+    "test-node": "ava ./dist/**/__tests__/*.node.test.js -v",
+    "test-browser": "BROWSER_ENV=true ava ./dist/**/__tests__/*.browser.test.js -v",
+    "test": "npm run test-build && npm run lint && npm run test-node && npm run test-browser"
   },
   "keywords": [
     "react",
@@ -35,6 +36,10 @@
     "browser-env": "^3.2.5",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "rollup": "^0.64.1",
+    "rollup-plugin-commonjs": "^9.1.4",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-typescript2": "^0.16.1",
     "tslint": "^5.11.0",
     "typescript": "^3.0.1"
   },
