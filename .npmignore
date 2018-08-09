@@ -1,9 +1,11 @@
 .circleci
 docs
+dist
 test
 src
 node_modules
 tsconfig.json
 tslint.json
+**/__tests__
 **/*.test.*
 **/.*

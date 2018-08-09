@@ -4,16 +4,14 @@ import { render } from 'react-dom';
 import {
   createCSSCollector,
   CSSCollector,
-} from './CSSCollector';
-import {
   CSSFetchState,
   CSSMap,
-} from './CSSContext';
-import { CSSProvider } from './CSSProvider';
-import { getCSSMap } from './getCSSMap';
-import { toTagString } from './toTag';
-import { appendCSS } from './utils/appendCSS';
-import { isServer } from './utils/isServer';
+  CSSProvider,
+  getCSSMap,
+  toTagString,
+} from '../index';
+import { appendCSS } from '../utils/appendCSS';
+import { isServer } from '../utils/isServer';
 
 const App: React.SFC = ({ children }) => {
   return (
