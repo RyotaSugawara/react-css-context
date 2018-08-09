@@ -4,6 +4,7 @@ dist
 test
 src
 node_modules
+rollup.config.js
 tsconfig.json
 tslint.json
 **/__tests__
