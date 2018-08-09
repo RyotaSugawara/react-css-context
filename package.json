@@ -2,7 +2,7 @@
   "name": "react-css-context",
   "version": "0.1.2",
   "description": "Async Loading CSS file in our React Application.",
-  "main": "./lib/index.js",
+  "main": "./lib/react-css-context.js",
   "types": "./lib/index.d.ts",
   "scripts": {
     "build": "rollup -c",
