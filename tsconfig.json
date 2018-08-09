@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
+    "downlevelIteration": true,
     "sourceMap": true,
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "module": "commonjs",
     "moduleResolution": "node",
-    "target": "ES2017",
+    "target": "es5",
     "jsx": "react",
     "outDir": "lib",
     "rootDir": "src",
