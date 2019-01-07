@@ -19,7 +19,7 @@ module.exports = {
           declaration: true,
           module: 'esnext'
         },
-        excludes: [
+        exclude: [
           '**/__tests__/*.tsx'
         ]
       },
