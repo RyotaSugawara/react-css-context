@@ -1,6 +1,7 @@
 import test from 'ava';
 import * as React from 'react';
 import { render } from 'react-dom';
+import '../../test/helpers/setup-browser-env.js';
 import {
   createCSSCollector,
   CSSCollector,
