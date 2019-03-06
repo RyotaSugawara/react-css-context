@@ -1,6 +1,6 @@
 {
   "name": "react-css-context",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Async Loading CSS file in our React Application.",
   "main": "./lib/react-css-context.js",
   "types": "./lib/index.d.ts",
