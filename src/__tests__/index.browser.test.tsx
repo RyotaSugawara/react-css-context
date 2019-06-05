@@ -35,10 +35,12 @@ test('appendCSS', (t) => {
   }, () => {
     t.pass();
   });
-  const linkElement = document.head.querySelectorAll<HTMLLinkElement>('link[data-react-css-context]')[0];
+  const linkElement = document.head.querySelector<HTMLLinkElement>('link[data-react-css-context]');
   // force fire onload events
-  linkElement.onload(this);
-  linkElement.onerror(this);
+  const load = new Event('load');
+  const error = new Event('error');
+  linkElement.dispatchEvent(load);
+  linkElement.dispatchEvent(error);
 });
 
 test('Client Side Rendering', (t) => {
@@ -90,11 +92,13 @@ test('Client Side Rendering', (t) => {
   t.is(document.getElementById('test_3').innerHTML, '');
 
   // Simulate onload at test_2
-  document.querySelector<HTMLLinkElement>(`link[href="${CSS_FILE_2}"]`).onload(this);
+  const link1 = document.querySelector<HTMLLinkElement>(`link[href="${CSS_FILE_2}"]`);
+  link1.dispatchEvent(new Event('load'));
   t.is(document.getElementById('test_2').innerHTML, 'ok');
 
   // Simulate onerror at test_3
-  document.querySelector<HTMLLinkElement>(`link[href="${CSS_FILE_3}"]`).onerror(this);
+  const link2 = document.querySelector<HTMLLinkElement>(`link[href="${CSS_FILE_3}"]`);
+  link2.dispatchEvent(new Event('error'));
   t.is(document.getElementById('test_3').innerHTML, '<span>error</span>');
 
   /* tslint:disable:max-line-length */
