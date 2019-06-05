@@ -10,18 +10,19 @@ jobs:
           key: npm-dependency-cache-{{ checksum "package.json" }}
       - run:
           name: npm-install
-          command: npm install
+          command: yarn install
       - save_cache:
           key: npm-dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
       - run:
           name: build
-          command: npm run build
+          command: yarn build
       - run:
           name: test
           command: |
-            npm test
+            yarn lint
+            yarn test
 workflows:
   version: 2
   build:
